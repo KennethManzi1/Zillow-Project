@@ -37,13 +37,15 @@ import warnings
 ```
 These are the libraries you'll need to get the data. Requests and warnings especially as we are extracting the data in JSON format through the API and warnings will tell us whether we reach a request limit on the data pull.
 
-- Next you'll grab the scrapeak Zillow API url, your API Key from scrapeak, the listing URL from zillow that you're using( I was browsing Minneapolis properties just recently so I'll copy that on the listing_url variable) and the query string dictionary that will set the your API_key and the scrapeak URL.
+- Next you'll grab the scrapeak Zillow API url, your API Key from scrapeak, the listing URL from zillow that you're using(I was browsing Minneapolis properties just recently so I'll copy that on the listing_url variable) and the query string dictionary that will set the your API_key and the scrapeak URL.
+
+- The ZPIDs that I pulled are Minneapolis ZPIDs so we will be pulling Minneapolis properties. You'll need to make sure to select the types of properties you want for Zillow and that they're on sale then copy the listing URL onto the listing_url variable
 
 - After that we will transform the metadata into JSON, get the search results, and normalize it into a dataframe to export into a CSV
 
 ```Python
 url = "https://app.scrapeak.com/v1/scrapers/zillow/listing"
-api_key = 'fe4ba972-163e-4dec-8a39-fd9e4e82d6dc'
+api_key = 'YOUR API KEY HERE'
 listing_url = 'https://www.zillow.com/minneapolis-mn/?searchQueryState=%7B%22pagination%22%3A%7B%7D%2C%22isMapVisible%22%3Atrue%2C%22mapBounds%22%3A%7B%22west%22%3A-93.36034635009766%2C%22east%22%3A-93.12345364990234%2C%22south%22%3A44.92864696015096%2C%22north%22%3A45.06824100973466%7D%2C%22regionSelection%22%3A%5B%7B%22regionId%22%3A5983%2C%22regionType%22%3A6%7D%5D%2C%22filterState%22%3A%7B%22land%22%3A%7B%22value%22%3Afalse%7D%2C%22ah%22%3A%7B%22value%22%3Atrue%7D%2C%22apa%22%3A%7B%22value%22%3Afalse%7D%2C%22manu%22%3A%7B%22value%22%3Afalse%7D%2C%22sort%22%3A%7B%22value%22%3A%22globalrelevanceex%22%7D%2C%22con%22%3A%7B%22value%22%3Afalse%7D%2C%22apco%22%3A%7B%22value%22%3Afalse%7D%2C%22tow%22%3A%7B%22value%22%3Afalse%7D%7D%2C%22isEntirePlaceForRent%22%3Atrue%2C%22isRoomForRent%22%3Afalse%2C%22isListVisible%22%3Atrue%2C%22mapZoom%22%3A12%7D'
 querystring = {
         "api_key": api_key,
@@ -71,9 +73,12 @@ listings.to_csv('listings.csv')
 - There you have it. Now we have the list of Minneapolis ZPIDs from Zillow. Now we will use the ZPIDs to get those properties and their prices and estimates.
 
 ## Getting Zillow property data and estimates
-- Okay now the real fun begins and where the coding happens. With the ZPIDs, let's now pull the information from Zillow. The ZPIDs that I have are Minneapolis ZPIDs so we will be pulling Minneapolis properties.
-- On the URL on the first code, I selected single and multi family properties on Zillow so our ZPIDs should have properties in those designations.
+- Okay now the real fun begins and where the coding happens. With the ZPIDs, let's now pull the information from Zillow. 
+  
+- On the listing URL variable from the top code, I selected single and multi family properties on Zillow so our ZPIDs should have properties in those designations.
+  
 - Okay here is the Python code below. We will import the required libraries. Pandas for data cleaning, numpy, requests and time. We will import time because we are looping through the ZPIDs to grab each of their property data from Zillow through the Rapid Zillow API. That is going to burn through the request/Quota of the API pretty quickly so we will limit the request as the loop works its magic by 1.5 seconds. You will see the code of it below.
+  
 - Matplot and seaborn are there if you're interested in creating visualizations with this data. I didn't do that as for now but may come back to this if I want to see trends of the prices in the Minneapolis Market within a specific timeline.
 
 ```Python
@@ -117,7 +122,7 @@ url = 'https://zillow-working-api.p.rapidapi.com/pro/byzpid'
 zpid_list = zpid_list
 
 headers = {
-    'X-RapidAPI-Key': '8dcbe22431msh7b0dd55a8b9d96dp12f6cajsn3ff11564ed99',
+    'X-RapidAPI-Key': 'YOUR API KEY HERE',
     'X-RapidAPI-Host': 'zillow-working-api.p.rapidapi.com'
 }
 dataframe = []
