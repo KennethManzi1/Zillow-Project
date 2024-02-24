@@ -11,7 +11,9 @@
 - And with that I will go ahead and show how to use Python to extract insights from Zillow in regards of getting prices and rental estimates of a particular location. This will involve some data cleaning and cleaning meta data in Python and SQL in order to generate a CSV with each property's information, price, value estimate and rental estimate. I will post a CSV output of single family and multi family homes in Minneapolis.
 
 
-#
+# Getting the Data from Zillow
+
+- First thing you'll need to do is you will need Zillow API key
 
 
 
