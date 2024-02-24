@@ -70,6 +70,9 @@ listings.to_csv('listings.csv')
 ```
 - There you have it. Now we have the list of Minneapolis ZPIDs from Zillow. Now we will use the ZPIDs to get those properties and their prices and estimates.
 
+## Getting Zillow property data and estimates
+- 
+
   
 
 
