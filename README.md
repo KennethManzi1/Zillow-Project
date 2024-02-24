@@ -59,14 +59,18 @@ z_for
 property_data = z_for["data"]["cat1"]["searchResults"]["mapResults"]
 property_data 
 
-#normalizing the listings from json to a dataframe
+#normalizing the listings from json to a dataframe and get the zpids
 listings = pd.json_normalize(property_data)
+listings = listings['zpid']
 listings
 
 
 #to csv
 listings.to_csv('listings.csv')
 ```
+- There you have it. Now we have the list of Minneapolis ZPIDs from Zillow. Now we will use the ZPIDs to get those properties and their prices and estimates.
+
+  
 
 
 
