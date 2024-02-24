@@ -24,7 +24,18 @@
 
 # How to get the ZPIDs from Zillow without manually looking for them.
 
--
+- First thing you'll need to do is to get an API Key from this [Scrapeak](https://app.scrapeak.com/login/?next=/dashboard/scrapers).
+- @analyticsariel has a youtube video on how to register and get the API Key [here](https://www.youtube.com/watch?v=bcZe01LhdFc&list=FLzVtAr-grWR9vaEG4ziY3fw&index=8&t=666s).
+- Once you get the API Key, the following Python Script below will generate the property listings from Zillow and their ZPID keys on the front end.
+
+```Python
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import requests
+import warnings
+```
+These are the libraries you'll need to get the data. Requests and warnings especially as we are extracting the data in JSON format through the API and warnings will tell us whether we reach a request limit on the data pull
 
 
 
