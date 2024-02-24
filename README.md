@@ -71,7 +71,107 @@ listings.to_csv('listings.csv')
 - There you have it. Now we have the list of Minneapolis ZPIDs from Zillow. Now we will use the ZPIDs to get those properties and their prices and estimates.
 
 ## Getting Zillow property data and estimates
-- 
+- Okay now the real fun begins and where the coding happens. With the ZPIDs, let's now pull the information from Zillow. The ZPIDs that I have are Minneapolis ZPIDs so we will be pulling Minneapolis properties.
+- On the URL on the first code, I selected single and multi family properties on Zillow so our ZPIDs should have properties in those designations.
+- Okay here is the Python code below. We will import the required libraries. Pandas for data cleaning, numpy, requests and time. We will import time because we are looping through the ZPIDs to grab each of their property data from Zillow through the Rapid Zillow API. That is going to burn through the request/Quota of the API pretty quickly so we will limit the request as the loop works its magic by 1.5 seconds. You will see the code of it below.
+- Matplot and seaborn are there if you're interested in creating visualizations with this data. I didn't do that as for now but may come back to this if I want to see trends of the prices in the Minneapolis Market within a specific timeline.
+
+```Python
+#Importing the Libraries
+import seaborn as sns
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+from pathlib import Path
+import os
+import glob
+
+import pandas as pd
+from pandas.api.types import is_string_dtype
+from pandas.api.types import is_numeric_dtype
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+```
+- Time to get the ZPIDs now. You can convert them into a list using the list() function. I ran into some data type errors so I converted the column into an integer and cleaned the messy stuff out of the column.
+
+```Python
+listings = pd.read_csv('listings.csv')
+listings['zpid'] = listings['zpid'].astype('int')
+listings
+
+zpid_list = list(listings['zpid'])
+zpid_list
+```
+
+- We will use the ZPID endpoint code from the API and create a for loop that will grab each property info for each zpid within the list of zpid in JSON format and append the JSON data to an empty dataframe list.
+- We will limit the request speed by 1.5 seconds to avoid burning the API quota.
+
+```Python
+url = 'https://zillow-working-api.p.rapidapi.com/pro/byzpid'
+
+zpid_list = zpid_list
+
+headers = {
+    'X-RapidAPI-Key': '8dcbe22431msh7b0dd55a8b9d96dp12f6cajsn3ff11564ed99',
+    'X-RapidAPI-Host': 'zillow-working-api.p.rapidapi.com'
+}
+dataframe = []
+
+for zpid in zpid_list:
+    querystring = {"zpid":zpid}
+    z_for_sale_resp = requests.request("GET", url, headers=headers, params=querystring)
+    z_for_sale_resp_json = z_for_sale_resp.json()
+    time.sleep(1.5)
+    dataframe.append(z_for_sale_resp_json)
+    print(z_for_sale_resp_json)
+    
+
+print(dataframe)
+```
+
+- Normalize the dataframe into the appropriate format and get the columns that we will need(Address, Type, neighborhood, price, zillow value estimate, zillow rent estimate).
+
+```Python
+df_z_for_sale = pd.json_normalize(dataframe)
+
+detail_cols = ['propertyDetails.streetAddress', 
+ 'propertyDetails.city',
+ 'propertyDetails.zipcode',
+ 'propertyDetails.state',
+ 'propertyDetails.price',
+ 'propertyDetails.homeType',
+ 'propertyDetails.homeStatus',
+ 'propertyDetails.zestimate',
+ 'propertyDetails.rentZestimate',
+ 'propertyDetails.livingArea',
+ 'propertyDetails.bedrooms','propertyDetails.bathrooms', 'propertyDetails.neighborhoodRegion.name', 
+'propertyDetails.daysOnZillow', 'propertyDetails.timeOnZillow', 'propertyDetails.brokerageName',
+ 'propertyDetails.zpid', 'propertyDetails.listedBy', 'propertyDetails.datePostedString', 'propertyDetails.lotSize', 'propertyDetails.lotAreaValue',
+ 'propertyDetails.lotAreaUnits','propertyDetails.postingProductType', 'propertyDetails.yearBuilt', 'propertyDetails.countyId', 'propertyDetails.lastSoldPrice',
+  'propertyDetails.mortgageRates.thirtyYearFixedRate', 
+  'propertyDetails.priceHistory', 'propertyDetails.taxHistory', 'propertyDetails.parcelId','propertyDetails.countyFIPS'
+ ]
+
+df_z_for_saleoo = df_z_for_sale[detail_cols]
+df_z_for_saleoo
+```
+
+- Convert the data into a CSV
+
+```Python
+df_z_for_saleoo.to_csv('minneapolisprop.csv')
+```
+
+Now we have the list of the Minneapolis properties and we can go ahead and format and do some additional data cleaning. You can use Python Pandas to do the cleaning or SQL. I decided to use SQL in this case but either method works.
+
+## Data Cleaning in SQL
+
+
 
   
 
