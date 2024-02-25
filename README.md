@@ -7,8 +7,9 @@
 
 - [Overview](#Overview) 
 - [Zillow API and ZPID endpoint](#Zillow-API-and-ZPID-endpoint)
-- [Solution 2](#Solution-2) 
-- [Solution 3](#Solution-3)
+- [How to get the ZPIDs from Zillow without manually looking for them](#How-to-get-the-ZPIDs-from-Zillow-without-manually-looking-for-them) 
+- [Getting Zillow property data and estimates](#Getting-Zillow-property-data-and-estimates)
+- [Data Cleaning in SQL](#Data-Cleaning-in-SQL)
 - [Links](#Links)
 
 ***
