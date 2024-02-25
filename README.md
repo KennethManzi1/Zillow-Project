@@ -294,7 +294,7 @@ FROM [master].[dbo].[minneapolisprop]
 )m
 ```
 
-- Now that the data is cleaned and concise, the output file looks better than before. However, if i missed anything or if I overdid it with the formatting please let me know and I am open to any tips and feedback on how to make it better. The output file can be found here.
+- Now that the data is cleaned and concise, the output file looks better than before. However, if i missed anything or if I overdid it with the formatting please let me know and I am open to any tips and feedback on how to make it better. The output file can be found [here](https://github.com/KennethManzi1/Zillow-Project/blob/main/FinalMinneapolispropoutput.csv).
 
 - Overall this was a fun project and it happened through Ariel after learning about her journey from Bigger Pockets Rookie Podcast. As an individual interested in buying my first property and also a home in the future, this was a great way to use my skills in order to enhance my understanding of the housing market and these insights will help me to find opportunities within the market that will help me reach their goals.
   
