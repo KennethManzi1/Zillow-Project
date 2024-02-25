@@ -289,6 +289,8 @@ FROM [master].[dbo].[minneapolisprop]
 )m
 ```
 
+Now that the data is cleaned and concise, the output file looks better than before. However, if i missed anything or if I overdid it with the formatting please let me know and I am open to any tips and feedback on how to make it better. The output file can be found here. 
+
 
 
 
