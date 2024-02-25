@@ -2,6 +2,7 @@
 
 # Table Of Contents
 
+***
 
 # Overview
 - In the world of evolving markets and advanced technology, it is important for homebuyers and real estate investors to stay up to speed with how the housing market functions and evolves over time. Thanks to data analytics and programming languages such as python, real estate investors and homebuyers can use these skills to increase the likelihood of finding homes or investment properties that fits their budget and their long term ROI and goals. 
@@ -10,6 +11,7 @@
 
 - And with that I will go ahead and show how to use Python to extract insights from Zillow in regards of getting prices and rental estimates of a particular location. This will involve some data cleaning and cleaning meta data in Python and SQL in order to generate a CSV with each property's information, price, value estimate and rental estimate. I will post a CSV output of single family and multi family homes in Minneapolis.
 
+***
 
 # Zillow API and ZPID endpoint.
 
@@ -21,6 +23,7 @@
 
 - Once you get the zpid endpoint snippet, the next step is to generate the ZPIDs.
 
+***
 
 # How to get the ZPIDs from Zillow without manually looking for them.
 
@@ -71,6 +74,8 @@ listings
 listings.to_csv('listings.csv')
 ```
 - There you have it. Now we have the list of Minneapolis ZPIDs from Zillow. Now we will use the ZPIDs to get those properties and their prices and estimates.
+
+***
 
 ## Getting Zillow property data and estimates
 - Okay now the real fun begins and where the coding happens. With the ZPIDs, let's now pull the information from Zillow. 
@@ -173,6 +178,9 @@ df_z_for_saleoo.to_csv('minneapolisprop.csv')
 ```
 
 - Now we have the list of the Minneapolis properties and we can go ahead and format and do some additional data cleaning. You can use Python Pandas to do the cleaning or SQL. I decided to use SQL in this case but either method works.
+
+
+***
 
 ## Data Cleaning in SQL
 
@@ -301,6 +309,15 @@ FROM [master].[dbo].[minneapolisprop]
 - Whether you're interested in investing in real estate or just want to own a home, I hope this code can help provide you insights on making the right decision in purchasing a home using data. Thank you for taking your time to read this and let me know if you have any questions or concerns!!!
 
 
+***
+
+### Links
+
+- [Analytics Ariel](https://linktr.ee/AnalyticsAriel)
+- [Subscribe to Tech in Real Estate](https://www.youtube.com/@techinrealestate)
+- [Bigger Pockets Rookie Podcast](https://www.biggerpockets.com/podcasts/real-estate-rookie)
+- [Scrapeak](https://app.scrapeak.com/login/?next=/dashboard/scrapers)
+- [Rapid API](https://rapidapi.com/sorowerhossan01/api/zillow-working-api/pricing)
 
 
 
