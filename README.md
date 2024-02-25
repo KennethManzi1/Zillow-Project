@@ -172,14 +172,19 @@ df_z_for_saleoo
 df_z_for_saleoo.to_csv('minneapolisprop.csv')
 ```
 
-Now we have the list of the Minneapolis properties and we can go ahead and format and do some additional data cleaning. You can use Python Pandas to do the cleaning or SQL. I decided to use SQL in this case but either method works.
+- Now we have the list of the Minneapolis properties and we can go ahead and format and do some additional data cleaning. You can use Python Pandas to do the cleaning or SQL. I decided to use SQL in this case but either method works.
 
 ## Data Cleaning in SQL
 
 - Now that we have the data in a CSV file. We can start to do data cleaning and formatting the fields appropriately. You can do this in Python, SQL or any other data cleaning tool. I will be doing this in SQL.
+
 - First thing you'll need to add the data into your SQL Server or any relational database management system that you use. I use SQL server through a docker image so I can upload the CSV in SQL and create a table with the data.
+
 - Here is a snapshot of data in Visual Studio Code
+
 - ![Screen Shot 2024-02-24 at 9 05 09 PM](https://github.com/KennethManzi1/Zillow-Project/assets/120513764/4df67288-e729-4a6b-8211-725a4ffcbb0a)
+
+
 - Now we can do some data cleaning and formatting such as dealing with NULL Values, formatting the history data that is under JSON, and fixing string inaccuracies in the data.
 
 ```SQL
