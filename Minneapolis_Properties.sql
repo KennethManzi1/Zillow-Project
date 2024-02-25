@@ -96,7 +96,7 @@ propertyDetails_lotAreaUnits AS [lot Area Units],
 propertyDetails_yearBuilt AS [Year Built],
 propertyDetails_countyId AS [CountyID],
 propertyDetails_mortgageRates_thirtyYearFixedRate AS [ThirtyYearFixedRate],
-propertyDetails_parcelId AS	[ParcelID],
+propertyDetails_parcelId AS [ParcelID],
 propertyDetails_countyFIPS AS [countyFIPS],
 REPLACE(REPLACE(REPLACE(REPLACE(propertyDetails_priceHistory, 'None', 'null'), '''', '"'), 'False', 'false'), 'True', 'true') AS [Price History],
 REPLACE(REPLACE(REPLACE(REPLACE(propertyDetails_taxHistory, 'None', 'null'), '''', '"'), 'False', 'false'), 'True', 'true') AS [Tax History]
