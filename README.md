@@ -330,7 +330,7 @@ FROM [master].[dbo].[minneapolisprop]
 - [Zillow Property info and estimates code](https://github.com/KennethManzi1/Zillow-Project/blob/main/Zillow%20Property%20data%20Estimates.py)
 - [Minneapolis data cleaning SQL Code](https://github.com/KennethManzi1/Zillow-Project/blob/main/Minneapolis_Properties.sql)
 - [CSV final output](https://github.com/KennethManzi1/Zillow-Project/blob/main/FinalMinneapolispropoutput.csv)
-- 
+  
 
 
 
