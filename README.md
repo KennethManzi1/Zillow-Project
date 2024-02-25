@@ -320,6 +320,11 @@ FROM [master].[dbo].[minneapolisprop]
 - [Bigger Pockets Rookie Podcast](https://www.biggerpockets.com/podcasts/real-estate-rookie)
 - [Scrapeak](https://app.scrapeak.com/login/?next=/dashboard/scrapers)
 - [Rapid API](https://rapidapi.com/sorowerhossan01/api/zillow-working-api/pricing)
+- [ZPID Python code](https://github.com/KennethManzi1/Zillow-Project/blob/main/Zillow%20Listings%20and%20ZPID%20Python.py)
+- [Zillow Property info and estimates code](https://github.com/KennethManzi1/Zillow-Project/blob/main/Zillow%20Property%20data%20Estimates.py)
+- [Minneapolis data cleaning SQL Code](https://github.com/KennethManzi1/Zillow-Project/blob/main/Minneapolis_Properties.sql)
+- [CSV final output](https://github.com/KennethManzi1/Zillow-Project/blob/main/FinalMinneapolispropoutput.csv)
+- 
 
 
 
