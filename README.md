@@ -3,7 +3,7 @@
 # 👨‍💻 Table Of Contents
 
 
-- [Overview](#Overview ) 
+- [Overview]
 - [Zillow API and ZPID endpoint](#Zillow-API-and-ZPID-endpoint)
 - [How to get the ZPIDs from Zillow without manually looking for them](#How-to-get-the-ZPIDs-from-Zillow-without-manually-looking-for-them) 
 - [Getting Zillow property data and estimates](#Getting-Zillow-property-data-and-estimates)
@@ -85,7 +85,7 @@ listings.to_csv('listings.csv')
 
 ***
 
-## 👨‍💻 Getting Zillow property data and estimates
+## Getting Zillow property data and estimates
 - Okay now the real fun begins and where the coding happens. With the ZPIDs, let's now pull the information from Zillow. 
   
 - On the listing URL variable from the top code, I selected single and multi family properties on Zillow so our ZPIDs should have properties in those designations.
@@ -190,7 +190,7 @@ df_z_for_saleoo.to_csv('minneapolisprop.csv')
 
 ***
 
-## 👨‍💻  Data Cleaning in SQL
+## Data Cleaning in SQL
 
 - Now that we have the data in a CSV file. We can start to do data cleaning and formatting the fields appropriately. You can do this in Python, SQL or any other data cleaning tool. I will be doing this in SQL.
 
@@ -319,7 +319,7 @@ FROM [master].[dbo].[minneapolisprop]
 
 ***
 
-### ⚡ Links
+### Links
 
 - [Analytics Ariel](https://linktr.ee/AnalyticsAriel)
 - [Subscribe to Tech in Real Estate](https://www.youtube.com/@techinrealestate)
