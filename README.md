@@ -12,7 +12,7 @@
 
 ***
 
-💬# Overview  
+# Overview  
 - In the world of evolving markets and advanced technology, it is important for homebuyers and real estate investors to stay up to speed with how the housing market functions and evolves over time. Thanks to data analytics and programming languages such as python, real estate investors and homebuyers can use these skills to increase the likelihood of finding homes or investment properties that fits their budget and their long term ROI and goals. 
 
 - @analyticsariel, a mentor and an expert in the in the data analytics space and a real estate investor has made it possible for individuals in the data analytics space such as myself whom are interested in the housing marekt to utilize these skills to enhance our understanding of the market in order to make sound decisions in terms of buying a home or purchasing a rental property. I am truly grateful for stumbling into her biggerpockets rookie episode and connecting with her on social media in order to learn about using my analytics skills to enhance my understanding of the real estate market.
@@ -21,7 +21,7 @@
 
 ***
 
-# 💬 Zillow API and ZPID endpoint.
+# Zillow API and ZPID endpoint.
 
 - First thing you'll need is the Zillow API key which can be found [here](https://rapidapi.com/sorowerhossan01/api/zillow-working-api/pricing).
 - You will see the price ranges as each time you run the API using Python or a different programming language, you will consume many requests depending how big the dataset is so the larger the data is, the more requests that you'll need. ![Screen Shot 2024-02-24 at 4 07 29 PM](https://github.com/KennethManzi1/Zillow-Project/assets/120513764/f99f39a8-5fc6-4ae7-bbbb-277e5a3bc97b)
@@ -33,7 +33,7 @@
 
 ***
 
-# 💬 How to get the ZPIDs from Zillow without manually looking for them.
+# How to get the ZPIDs from Zillow without manually looking for them.
 
 - First thing you'll need to do is to get an API Key from this [Scrapeak](https://app.scrapeak.com/login/?next=/dashboard/scrapers).
 - @analyticsariel has a youtube video on how to register and get the API Key [here](https://www.youtube.com/watch?v=bcZe01LhdFc&list=FLzVtAr-grWR9vaEG4ziY3fw&index=8&t=666s).
