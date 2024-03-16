@@ -3,7 +3,7 @@
 # 👨‍💻 Table Of Contents
 
 
-- [Overview](# 💬 Overview) 
+- [Overview](#Overview) 
 - [Zillow API and ZPID endpoint](#Zillow-API-and-ZPID-endpoint)
 - [How to get the ZPIDs from Zillow without manually looking for them](#How-to-get-the-ZPIDs-from-Zillow-without-manually-looking-for-them) 
 - [Getting Zillow property data and estimates](#Getting-Zillow-property-data-and-estimates)
