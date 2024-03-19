@@ -61,46 +61,46 @@ CONCAT('$', COALESCE(JSON_VALUE(m.[Tax History], '$[10].taxPaid'),'UNKNOWN')) AS
 */
 FROM 
 (
-SELECT propertyDetails_zpid AS [Zillow zpid],
-propertyDetails_streetAddress AS [Street Address],
-propertyDetails_city AS [City],
-propertyDetails_zipcode AS [Zip Code],
-propertyDetails_state AS [State],
-propertyDetails_homeStatus AS [Status],
-propertyDetails_neighborhoodRegion_name	AS [Neighborhood],
-propertyDetails_homeType AS [Type],
-CONCAT(propertyDetails_bedrooms, ' ', 'Bedrooms') AS [Number of Beds],
-CONCAT(propertyDetails_bathrooms, '  ', 'Bathrooms') As [Number of Bathrooms],	
-CONCAT( '$', COALESCE(propertyDetails_price, 0)) AS [price],
-CASE WHEN propertyDetails_zestimate IS NULL 
-THEN 'UNKNOWN'
-ELSE CONCAT('$',propertyDetails_zestimate ) 
-END AS [Property Value Estimate],
+	SELECT propertyDetails_zpid AS [Zillow zpid],
+	propertyDetails_streetAddress AS [Street Address],
+	propertyDetails_city AS [City],
+	propertyDetails_zipcode AS [Zip Code],
+	propertyDetails_state AS [State],
+	propertyDetails_homeStatus AS [Status],
+	propertyDetails_neighborhoodRegion_name	AS [Neighborhood],
+	propertyDetails_homeType AS [Type],
+	CONCAT(propertyDetails_bedrooms, ' ', 'Bedrooms') AS [Number of Beds],
+	CONCAT(propertyDetails_bathrooms, '  ', 'Bathrooms') As [Number of Bathrooms],	
+	CONCAT( '$', COALESCE(propertyDetails_price, 0)) AS [price],
+	CASE WHEN propertyDetails_zestimate IS NULL 
+	THEN 'UNKNOWN'
+	ELSE CONCAT('$',propertyDetails_zestimate ) 
+	END AS [Property Value Estimate],
 
-CASE WHEN propertyDetails_rentZestimate IS NULL
-THEN 'UNKNOWN'
-ELSE CONCAT('$', propertyDetails_rentZestimate)
-END AS [Property Rent Estimate],
-CONCAT(propertyDetails_daysOnZillow, ' ', 'Days') AS [Days on Zillow],
-propertyDetails_timeOnZillow AS [Time on Zillow],
-propertyDetails_brokerageName AS [brokerageName],
-propertyDetails_datePostedString AS [Date_Posted],
-CASE WHEN propertyDetails_lastSoldPrice IS NULL
-THEN 'UNKNOWN'
-ELSE CONCAT('$', propertyDetails_lastSoldPrice)
-END AS [Last Sold Price],
+	CASE WHEN propertyDetails_rentZestimate IS NULL
+	THEN 'UNKNOWN'
+	ELSE CONCAT('$', propertyDetails_rentZestimate)
+	END AS [Property Rent Estimate],
+	CONCAT(propertyDetails_daysOnZillow, ' ', 'Days') AS [Days on Zillow],
+	propertyDetails_timeOnZillow AS [Time on Zillow],
+	propertyDetails_brokerageName AS [brokerageName],
+	propertyDetails_datePostedString AS [Date_Posted],
+	CASE WHEN propertyDetails_lastSoldPrice IS NULL
+	THEN 'UNKNOWN'
+	ELSE CONCAT('$', propertyDetails_lastSoldPrice)
+	END AS [Last Sold Price],
 
-propertyDetails_lotSize	AS [Lot Size],
-propertyDetails_lotAreaValue AS [Lot Area Value],
-propertyDetails_lotAreaUnits AS [lot Area Units],	
-propertyDetails_yearBuilt AS [Year Built],
-propertyDetails_countyId AS [CountyID],
-propertyDetails_mortgageRates_thirtyYearFixedRate AS [ThirtyYearFixedRate],
-propertyDetails_parcelId AS [ParcelID],
-propertyDetails_countyFIPS AS [countyFIPS],
-REPLACE(REPLACE(REPLACE(REPLACE(propertyDetails_priceHistory, 'None', 'null'), '''', '"'), 'False', 'false'), 'True', 'true') AS [Price History],
-REPLACE(REPLACE(REPLACE(REPLACE(propertyDetails_taxHistory, 'None', 'null'), '''', '"'), 'False', 'false'), 'True', 'true') AS [Tax History]
-FROM [master].[dbo].[minneapolisprop]
+	propertyDetails_lotSize	AS [Lot Size],
+	propertyDetails_lotAreaValue AS [Lot Area Value],
+	propertyDetails_lotAreaUnits AS [lot Area Units],	
+	propertyDetails_yearBuilt AS [Year Built],
+	propertyDetails_countyId AS [CountyID],
+	propertyDetails_mortgageRates_thirtyYearFixedRate AS [ThirtyYearFixedRate],
+	propertyDetails_parcelId AS [ParcelID],
+	propertyDetails_countyFIPS AS [countyFIPS],
+	REPLACE(REPLACE(REPLACE(REPLACE(propertyDetails_priceHistory, 'None', 'null'), '''', '"'), 'False', 'false'), 'True', 'true') AS [Price History],
+	REPLACE(REPLACE(REPLACE(REPLACE(propertyDetails_taxHistory, 'None', 'null'), '''', '"'), 'False', 'false'), 'True', 'true') AS [Tax History]
+	FROM [master].[dbo].[minneapolisprop]
 )m
 
 	
