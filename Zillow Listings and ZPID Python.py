@@ -36,22 +36,18 @@ property_data
 
 # In[4]:
 
-
 #normalizing the data into a dataframe
 listings = pd.json_normalize(property_data)
 listings = listings['zpid']
 listings
 
-
 # In[7]:
-
 
 #to csv
 listings.to_csv('listings.csv')
 
 
 # In[7]:
-
 
 # columns of interest
 details = ['zpid', 'hdpData.homeInfo.streetAddress','hdpData.homeInfo.city', 'hdpData.homeInfo.state', 'hdpData.homeInfo.zipcode',
