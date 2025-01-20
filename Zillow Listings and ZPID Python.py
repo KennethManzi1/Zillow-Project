@@ -3,7 +3,6 @@
 
 # In[1]:
 
-
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -21,7 +20,7 @@ listing_url = 'https://www.zillow.com/minneapolis-mn/?searchQueryState=%7B%22pag
 querystring = {
         "api_key": api_key,
         "url":listing_url
-    }
+}
 #transform to json
 z = requests.request("GET", url, params=querystring)
 z_for = z.json()
